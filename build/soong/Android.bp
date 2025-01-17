@@ -290,6 +290,22 @@ soong_config_module_type {
     properties: ["whole_static_libs"],
 }
 
+bootstrap_go_package {
+    name: "soong-lineage-mkdir",
+    pkgPath: "lineage/soong/mkdir",
+    deps: [
+        "blueprint",
+        "blueprint-pathtools",
+        "soong",
+        "soong-android",
+    ],
+    srcs: [
+        "mkdir/init.go",
+        "mkdir/mkdir.go",
+    ],
+    pluginFor: ["soong_build"],
+}
+
 camera_parameter_library {
     name: "camera_parameter_library_defaults",
     soong_config_variables: {
